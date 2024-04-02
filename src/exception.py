@@ -1,6 +1,6 @@
 import sys              
 import logging
-import logger
+from src.logger import logging
 def error_message_details(error,error_detail:sys):
     _,_,exc_tb=error_detail.exc_info()
     file_name=exc_tb.tb_frame.f_code.co_filename
@@ -27,6 +27,16 @@ class CustomException(Exception):
 #    try:
 #        a=1/0
 #    except Exception as e:
-#        #logger.logging("divide by zero has been reported")
+        #logger.logging("divide by zero has been reported")
 #        logging.info("divide by zero has been reported")
-#       raise CustomException (e,sys)
+ #       raise CustomException (e,sys)
+    
+
+
+#    Here, we have overridden the constructor of the Exception class to accept our own custom arguments salary and message.
+
+#Then, the constructor of the parent Exception class is called manually with the self.message argument using super().
+
+#The custom self.salary attribute is defined to be used later.
+
+#The inherited __str__ method of the Exception class is then used to display the corresponding message when SalaryNotInRangeError is raised.
